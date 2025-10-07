@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLFR Painel - Inicio</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .home-container {
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem;
+        }
+
+        .home-header {
+            margin-bottom: 3rem;
+        }
+
+        .home-header .logo-container img {
+            max-width: 180px;
+            height: auto;
+            margin: 0 auto 1rem auto;
+        }
+
+        .home-header h1 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .home-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card-link {
+            text-decoration: none;
+        }
+
+        .card-link .card {
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+
+        .card-link:hover .card {
+            transform: translateY(-10px);
+            box-shadow: 0 1.5rem 3rem var(--color-light);
+            border-color: var(--color-primary);
+        }
+
+        .card-link .card .material-icons-sharp {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-light);
+            color: var(--color-info-dark);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home-container">
+        <header class="home-header">
+            <div class="logo-container">
+                <img src="./img/logo1.png" alt="Logo 1">
+                <img src="./img/logo2.png" alt="Logo 2" class="logo2">
+            </div>
+            <h1>Painel de Ferramentas VLFR</h1>
+            <p>Selecione uma área para começar</p>
+        </header>
+
+        <main class="home-main">
+            <a href="./negociacao/historico.html" class="card-link">
+                <div class="card">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h2>Negociação</h2>
+                    <p>Gerenciar negociações, cotações, contatos e informações gerais.</p>
+                </div>
+            </a>
+            <a href="./acompanhamento/pecas.html" class="card-link">
+                <div class="card">
+                    <span class="material-icons-sharp">query_stats</span>
+                    <h2>Acompanhamento</h2>
+                    <p>Acompanhar status de peças, clientes e outras tarefas operacionais.</p>
+                </div>
+            </a>
+        </main>
+
+        <footer>
+            <p>Carglass® e o logo são marcas registradas da Belron S.A e suas subsidiárias. <a href="https://www.carglass.com.br/" target="_blank">Política de Privacidade</a>.</p>
+            <p class="version-info">Versão 3.1 | Última Atualização: 06/10/2025</p>
+            <p class="version-info">Desenvolvido por Luiz Wojcieckwoski | Equipe de negociacao VLFR</p>
+        </footer>
+    </div>
+
+    <div class="theme-section">
+        <div class="theme-panel">
+            <h4>Personalizar Tema</h4>
+            <div class="theme-content">
+                <div class="color-palette">
+                    <div class="color active" style="background: #dc3545;" data-color="red" title="Vermelho"></div>
+                    <div class="color" style="background: #007bff;" data-color="blue" title="Azul"></div>
+                    <div class="color" style="background: #28a745;" data-color="green" title="Verde"></div>
+                    <div class="color" style="background: #e83e8c;" data-color="pink" title="Rosa"></div>
+                    <div class="color" style="background: #9078c0;" data-color="lilac" title="Lilás"></div>
+                    <div class="color" style="background: #ffd43b;" data-color="yellow" title="Amarelo"></div>
+                </div>
+                <div class="dark-mode-section">
+                    <span class="material-icons-sharp dark-mode-icon">wb_sunny</span>
+                    <h4>Escuro</h4>
+                    <div class="toggle-switch">
+                        <span class="toggle-handle"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="theme-fab">
+            <span class="material-icons-sharp">color_lens</span>
+        </button>
+    </div>
+
+    <script src="./js/theme.js"></script>
+
+</body>
+
+</html>

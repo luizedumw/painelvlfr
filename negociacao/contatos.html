@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negociação - Contatos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo-container">
+                    <a href="../index.html" class="logo-link"></a>
+                    <img src="../img/logo1.png" alt="Logo 1">
+                    <img src="../img/logo2.png" alt="Logo 2" class="logo2">
+                </div>
+            </div>
+            <div class="sidebar">
+                <h3>Negociação</h3>
+                <a href="./historico.html"><span class="material-icons-sharp">history</span>
+                    <h4>Histórico</h4>
+                </a>
+                <a href="./atendimento.html"><span class="material-icons-sharp">support_agent</span>
+                    <h4>Atendimento</h4>
+                </a>
+                <a href="./contatos.html" class="active"><span class="material-icons-sharp">contacts</span>
+                    <h4>Contatos</h4>
+                </a>
+                <a href="./reembolso.html"><span class="material-icons-sharp">paid</span>
+                    <h4>Reembolso</h4>
+                </a>
+                <a href="./marcas.html"><span class="material-icons-sharp">verified</span>
+                    <h4>Marcas</h4>
+                </a>
+                <a href="./negativas.html"><span class="material-icons-sharp">thumb_down</span>
+                    <h4>Negativas</h4>
+                </a>
+                <a href="./informacoes.html"><span class="material-icons-sharp">help_outline</span>
+                    <h4>Info Úteis</h4>
+                </a>
+            </div>
+        </aside>
+
+        <main>
+            <div id="contatos-content">
+                <section id="contatos" class="content">
+                    <h1>Contatos e Afiliados</h1>
+                    <div class="add-contato-form">
+                        <div class="contatos-counter">
+                            <div class="counter-content">
+                                <div class="counter-icon">
+                                    <span class="material-icons-sharp">groups</span>
+                                </div>
+                                <div class="counter-info">
+                                    <div class="counter-number" id="totalContatos">0</div>
+                                    <div class="counter-label">Total de Contatos Cadastrados</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Adicionar Novo Contato</h3>
+                        <div class="form-grid">
+                            <input type="text" id="contato-afiliado" placeholder="Nome do Afiliado">
+                            <input type="text" id="contato-responsavel" placeholder="Responsável">
+                            <input type="text" id="contato-whatsapp" placeholder="WhatsApp">
+                            <input type="text" id="contato-cidade" placeholder="Cidade/UF">
+                            <div class="button-group">
+                                <button id="btn-add-contato" class="btn-primary">Adicionar</button>
+                                <button id="btn-cancel-contato" class="btn-clear" type="button">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contatos-header">
+                        <div class="search-wrapper">
+                            <span class="material-icons-sharp search-icon">search</span>
+                            <input type="text" id="searchContatos" placeholder="Filtrar contatos existentes...">
+                        </div>
+                        <div class="upload-wrapper">
+                            <button id="btn-export-xlsx" class="btn-secondary">
+                                <span class="material-icons-sharp">download</span>
+                                Exportar
+                            </button>
+                            <input type="file" id="excelFile" accept=".xlsx, .xls" style="display: none;">
+                            <button class="custom-file-button" onclick="document.getElementById('excelFile').click()">Importar Planilha</button>
+
+                            <!-- BOTÃO NOVO AQUI -->
+                            <button id="btn-clear-all" class="btn-clear" style="margin-left: 10px;">
+                                <span class="material-icons-sharp">delete_sweep</span>
+                                Limpar Todos
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="contatos-table-container">
+                        <table class="contatos-table">
+                            <thead>
+                                <tr>
+                                    <th>Afiliado</th>
+                                    <th>Responsável</th>
+                                    <th>WhatsApp</th>
+                                    <th>Cidade/UF</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contatosBody"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <div class="theme-section">
+            <div class="theme-panel">
+                <h4>Personalizar Tema</h4>
+                <div class="theme-content">
+                    <div class="color-palette">
+                        <div class="color active" style="background: #dc3545;" data-color="red" title="Vermelho"></div>
+                        <div class="color" style="background: #007bff;" data-color="blue" title="Azul"></div>
+                        <div class="color" style="background: #28a745;" data-color="green" title="Verde"></div>
+                        <div class="color" style="background: #e83e8c;" data-color="pink" title="Rosa"></div>
+                        <div class="color" style="background: #9078c0;" data-color="lilac" title="Lilás"></div>
+                        <div class="color" style="background: #ffd43b;" data-color="yellow" title="Amarelo"></div>
+                    </div>
+                    <div class="dark-mode-section">
+                        <span class="material-icons-sharp dark-mode-icon">wb_sunny</span>
+                        <h4>Escuro</h4>
+                        <div class="toggle-switch">
+                            <span class="toggle-handle"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="theme-fab">
+                <span class="material-icons-sharp">color_lens</span>
+            </button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="../js/contatos.js"></script>
+</body>
+
+</html>

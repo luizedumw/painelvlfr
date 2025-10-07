@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negociação - Histórico</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo-container">
+                    <a href="../index.html" class="logo-link"></a>
+                    <img src="../img/logo1.png" alt="Logo 1">
+                    <img src="../img/logo2.png" alt="Logo 2" class="logo2">
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>Negociação</h3>
+                <a href="./historico.html" class="active">
+                    <span class="material-icons-sharp">history</span>
+                    <h4>Histórico</h4>
+                </a>
+                <a href="./atendimento.html">
+                    <span class="material-icons-sharp">support_agent</span>
+                    <h4>Atendimento</h4>
+                </a>
+                <a href="./contatos.html">
+                    <span class="material-icons-sharp">contacts</span>
+                    <h4>Contatos</h4>
+                </a>
+                <a href="./reembolso.html">
+                    <span class="material-icons-sharp">paid</span>
+                    <h4>Reembolso</h4>
+                </a>
+                <a href="./marcas.html">
+                    <span class="material-icons-sharp">verified</span>
+                    <h4>Marcas</h4>
+                </a>
+                <a href="./negativas.html">
+                    <span class="material-icons-sharp">thumb_down</span>
+                    <h4>Negativas</h4>
+                </a>
+                <a href="./informacoes.html">
+                    <span class="material-icons-sharp">help_outline</span>
+                    <h4>Info Úteis</h4>
+                </a>
+            </div>
+        </aside>
+
+        <main>
+            <h1>Negociação - Histórico</h1>
+
+            <!-- COPIAR A SEÇÃO DE NEGOCIAÇÃO DO INDEX.HTML AQUI -->
+            <section id="negociacao" class="content">
+                <div class="card">
+                    <div class="page-update-info">
+                        <br>
+                        <span>Versão de: 02/10/2025</span>
+                    </div>
+
+                    <form id="formNegociacao" autocomplete="off">
+                        <div class="negociacao-grid">
+                            <!-- Coluna 1 -->
+                            <div class="form-column">
+                                <div class="input-group">
+                                    <label for="status">Status *</label>
+                                    <select id="status" required>
+                                        <option value="">Selecione</option>
+                                        <option value="DISPONÍVEL">DISPONÍVEL</option>
+                                        <option value="INDISPONÍVEL">INDISPONÍVEL</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="prestador">Afiliado *</label>
+                                    <input type="text" id="prestador" placeholder="Buscar na lista ou insira manualmente..." required>
+                                    <div class="autocomplete-suggestions" id="prestador-suggestions"></div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="responsavel">Responsável</label>
+                                    <input type="text" id="responsavel" placeholder="Nome do responsável">
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="whatsapp">WhatsApp *</label>
+                                    <input type="text" id="whatsapp" placeholder="(11) 99999-9999" required>
+                                </div>
+                            </div>
+
+                            <!-- Coluna 2 - MODIFICADO -->
+                            <div class="form-column">
+                                <div class="input-group">
+                                    <label for="valorInicial">Valor inicial *</label>
+                                    <input type="text" inputmode="decimal" id="valorInicial" placeholder="R$0.00" step="10.0" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="valorNegociado">Valor negociado *</label>
+                                    <input type="text" id="valorNegociado" placeholder="R$0.00" step="10.0" required>
+                                </div>
+
+                                <!-- Marca Vidros movido para cima -->
+                                <div id="vidrosMarcaBox" class="input-group">
+                                    <label for="marca_vidros">Marca Vidros *</label>
+                                    <select id="marca_vidros">
+                                        <option value="">-- escolha --</option>
+                                    </select>
+                                </div>
+
+                                <!-- Acessórios movido para baixo -->
+                                <div id="acessoriosMarcaBox" class="input-group hidden">
+                                    <label for="marca_acessorios">Marca Acessórios *</label>
+                                    <select id="marca_acessorios">
+                                        <option value="">-- escolha --</option>
+                                    </select>
+                                </div>
+
+                                <!-- Checkbox #Acessórios agora vem depois das marcas -->
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="isAcessorios">
+                                        <span class="checkmark"></span>
+                                        #Acessórios
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- AGENDAMENTO -->
+                            <div id="agendamentosBox" class="conditional-section hidden">
+                                <div class="input-group full-width">
+                                    <label>Agendamento (até 3 datas) *</label>
+                                    <div class="date-inputs-container">
+                                        <input type="date" id="agendamento1">
+                                        <input type="date" id="agendamento2">
+                                        <input type="date" id="agendamento3">
+                                    </div>
+                                    <!-- CHECKBOX ORDEM DE CHEGADA - ESTILO SIMPLES -->
+                                    <div class="checkbox-group" style="margin-top: 1rem;">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="ordemChegada">
+                                            <span class="checkmark"></span>
+                                            ORDEM DE CHEGADA
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="prevChegadaBox" class="conditional-section hidden">
+                                <div class="input-group full-width">
+                                    <label for="prevChegada">Previsão de chegada *</label>
+                                    <input type="date" id="prevChegada">
+                                </div>
+                            </div>
+
+                            <!-- Seção C/Móvel -->
+                            <div class="movel-section">
+                                <div class="movel-main-row">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="cMovel">
+                                            <span class="checkmark"></span>
+                                            Atendimento Móvel
+                                        </label>
+                                    </div>
+
+                                    <div id="movelOptions" class="movel-options hidden">
+                                        <div class="checkbox-group">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="cortesia">
+                                                <span class="checkmark"></span>
+                                                Cortesia
+                                            </label>
+                                        </div>
+
+                                        <div class="input-group movel-valor-input">
+                                            <label for="valorDeslocamento">Valor Desloc.</label>
+                                            <input type="text" id="valorDeslocamento" placeholder="R$0.00" step="0.01">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botões de ação -->
+                            <div class="form-actions-container">
+                                <!-- Botões de ação -->
+                                <div class="form-actions">
+                                    <div class="action-buttons">
+                                        <button type="button" id="btnGenerate" class="btn-primary">
+                                            <span class="material-icons-sharp">message</span>
+                                            Gerar Mensagem
+                                        </button>
+                                        <button type="button" id="btnCopy" class="btn-secondary">
+                                            <span class="material-icons-sharp">content_copy</span>
+                                            Copiar
+                                        </button>
+                                        <button type="button" id="btnClear" class="btn-clear">
+                                            <span class="material-icons-sharp">clear</span>
+                                            Limpar
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Resultado da mensagem -->
+                                <div class="result-section">
+                                    <label for="resultado">Mensagem Gerada:</label>
+                                    <textarea id="resultado" class="result" placeholder="A mensagem gerada aparecerá aqui..." readonly></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Incluir o theme section -->
+        <div class="theme-section">
+            <div class="theme-panel">
+                <h4>Personalizar Tema</h4>
+                <div class="theme-content">
+                    <div class="color-palette">
+                        <div class="color active" style="background: #dc3545;" data-color="red" title="Vermelho"></div>
+                        <div class="color" style="background: #007bff;" data-color="blue" title="Azul"></div>
+                        <div class="color" style="background: #28a745;" data-color="green" title="Verde"></div>
+                        <div class="color" style="background: #e83e8c;" data-color="pink" title="Rosa"></div>
+                        <div class="color" style="background: #9078c0;" data-color="lilac" title="Lilás"></div>
+                        <div class="color" style="background: #ffd43b;" data-color="yellow" title="Amarelo"></div>
+                    </div>
+                    <div class="dark-mode-section">
+                        <span class="material-icons-sharp dark-mode-icon">wb_sunny</span>
+                        <h4>Escuro</h4>
+                        <div class="toggle-switch">
+                            <span class="toggle-handle"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="theme-fab">
+                <span class="material-icons-sharp">color_lens</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="../js/marcas.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/negociacao.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
